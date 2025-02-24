@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './styles/App.css';
+import Profil from './components/Profil';
+import InputSection from './components/InputSection';
+import TaskSection from './components/TaskSection';
 
 function App() {
+  const [items, setItems] = useState([]);
+
+  function addItem(inputText) {
+    setItems(prevItems => {
+      return [...prevItems, inputText]
+    });
+  }
+
+  function deleteItem(taskId) {
+    setItems(prevItems => {
+      return prevItems.filter( (item, index) => index !== taskId)
+    }); 
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Profil />
+      <InputSection 
+        onAdd={addItem}/>
+      <TaskSection 
+        taskItems={items}
+        onDelete={deleteItem}/>
     </div>
   );
 }
