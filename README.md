@@ -1,6 +1,5 @@
 # to-do-list
-A simple React app to manage tasks and to-do lists.
-It provides a clean and responsive interface for adding, displaying, and deleting tasks. The app also supports task completion with a visual indicator for completed tasks.
+A simple React app to manage tasks and to-do lists. It provides a clean and responsive interface for adding, displaying, and deleting tasks. The app also supports task completion with a visual indicator for completed tasks.
 
 ## Features
 - Add new tasks to the to-do list.
